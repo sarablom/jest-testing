@@ -12,13 +12,5 @@ function convertFahrenheitToCelsius(degrees) {
     return fahrenheitToCelsius;
 }
 
-function checkIsWord (string) {
-    const regex = '^[a-zA-ZäöüßÄÖÜ]+$'
- if (typeof string === 'string' && string !== '' && string.match(regex)) {
-     return true;
- } else {
-     return false;
- }
-}
 
-module.exports = { add, convertFahrenheitToCelsius, checkIsWord }
+module.exports = { add, convertFahrenheitToCelsius }

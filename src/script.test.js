@@ -1,4 +1,4 @@
- const { add, convertFahrenheitToCelsius, checkIsWord } = require('./script.js')
+ const { add, convertFahrenheitToCelsius } = require('./script.js')
 
  describe('function add', () => {
     it('returns the sum of a and b', () => {
@@ -30,28 +30,3 @@
     })
  })
 
- describe('function checkIsWord', () => {
-     it('check if string', () => {
-        const testString = 'Hello';
-        const testingString = checkIsWord(testString)
-   
-        expect(testingString).toBe(true);
-     })
-
-     it('check if string is not empty', () => {
-         const testString = 'Hello';
-         const testingEmptyString = checkIsWord(testString);
-
-         expect(testingEmptyString).toBe(true);
-     })
-
-     it('check if only letters', () => {
-         const testString = 'rere';
-         
-         const testingForLetters = checkIsWord(testString);
-
-         expect(testingForLetters).toBe(true);
-     })
- })
-
- 
