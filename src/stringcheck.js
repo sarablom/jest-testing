@@ -19,4 +19,9 @@ function checkShareOfVowels (string) {
     }
 }
 
-module.exports = { checkIsWord, checkShareOfVowels }
+function trimString (string) {
+    const trimmedString = string.trim();
+    return trimmedString;
+}
+
+module.exports = { checkIsWord, checkShareOfVowels, trimString }

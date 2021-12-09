@@ -1,4 +1,4 @@
-const { checkIsWord, checkShareOfVowels } = require('./stringcheck.js')
+const { checkIsWord, checkShareOfVowels, trimString } = require('./stringcheck.js')
 
 describe('function checkIsWord', () => {
     it('check if string', () => {
@@ -38,4 +38,14 @@ describe('function checkShareOfVowels', () => {
 
        expect(testingForVowels).toBe(true);
    })
+})
+
+describe('funtion trimString', () => {
+    it('trim whitespace in string', () => {
+        const testString = ' hej ';
+
+        const testRemoveWhiteSpace = trimString(testString);
+
+        expect(testRemoveWhiteSpace).toBe('hej');
+    })
 })
