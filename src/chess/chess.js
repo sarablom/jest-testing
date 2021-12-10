@@ -78,12 +78,17 @@ function canMovePawn(from, to) {
     let moveTo =  updatedChessBoard[to];
     
 
-    console.log(updatedChessBoard[from], moveTo);
+    console.log(from[0] === to[0]);
     
     if (moveTo !== 'empty') {
         return false;
-    } 
-    return true;
+    } else if (moveFrom.includes('black') && from.charAt(1) - to.charAt(1) !== 1 && from[0] !== to[0]) {
+        return false;
+    // } else if () {
+    //     return false;
+    } else {
+        return true;
+    }
 }
 
 //Torn
