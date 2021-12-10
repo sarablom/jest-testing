@@ -1,4 +1,5 @@
-const { checkIsWord, checkShareOfVowels, trimString } = require('./stringcheck.js')
+const { checkIsWord, checkShareOfVowels, trimString, capitalizeString } = require('./stringcheck.js')
+
 
 describe('function checkIsWord', () => {
     it('check if string', () => {
@@ -25,7 +26,7 @@ describe('function checkIsWord', () => {
 
     function testWord(testData, expectedResult) {
         const actual = checkIsWord(testData);
-
+    
         expect(actual).toBe(expectedResult)
     }
 })
@@ -48,4 +49,24 @@ describe('funtion trimString', () => {
 
         expect(testRemoveWhiteSpace).toBe('hej');
     })
+})
+
+describe('function capitalizeString', () => {
+    it('make sure that the input is a string', () => {
+        testWord('hello', 'Hello');
+    })
+
+    it('capitalize the first letter in a word', () => {
+        const testValue = 'pelle';
+
+        const capitalizedLetterTest = capitalizeString(testValue);
+
+        expect(capitalizedLetterTest).toBe('Pelle');
+    })
+
+    function testWord(testData, expectedResult) {
+        const actual = capitalizeString(testData);
+    
+        expect(actual).toBe(expectedResult)
+    }
 })

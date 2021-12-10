@@ -24,4 +24,12 @@ function trimString (string) {
     return trimmedString;
 }
 
-module.exports = { checkIsWord, checkShareOfVowels, trimString }
+function capitalizeString (string) {
+    if (typeof string !== 'string') {
+        return false;
+    } else {
+        return string[0].toUpperCase() + string.slice(1);
+    }
+}
+
+module.exports = { checkIsWord, checkShareOfVowels, trimString, capitalizeString }
