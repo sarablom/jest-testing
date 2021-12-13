@@ -10,7 +10,7 @@ describe('chess function', () => {
     // })
 
     it('bonden går ett steg framåt, eller ett steg diagonalt framåt, om den kan slå en pjäs', () => {
-        const startPosition = 'F7';
+        const startPosition = 'E7';
         const destination = 'E6';
         
         const chessMove = canMovePawn(startPosition, destination);

@@ -77,15 +77,15 @@ function canMovePawn(from, to) {
     let moveFrom = updatedChessBoard[from];
     let moveTo =  updatedChessBoard[to];
     
-
-    console.log(from[0] === to[0]);
-    
+        //Must land on an empty space
     if (moveTo !== 'empty') {
         return false;
-    } else if (moveFrom.includes('black') && from.charAt(1) - to.charAt(1) !== 1 && from[0] !== to[0]) {
+        //Cannot move more than one step
+    } else if (moveFrom.includes('black') && from.charAt(1) - to.charAt(1) !== 1) {
         return false;
-    // } else if () {
-    //     return false;
+        //Must go in a straight line
+    } else if (moveFrom.includes('black') && from[0] !== to[0]) {
+        return false;
     } else {
         return true;
     }
