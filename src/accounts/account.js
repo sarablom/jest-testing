@@ -11,6 +11,32 @@ function deposit(account, amount) {
     }
 }
 
+function withdraw(account, amount) {
+    if (!isAccount(account)) {
+        throw new Error('Invalid account data');
+    } else if (!isAmount(amount)) {
+        throw new Error('Invalid amount');
+    } else if (account.balance >= amount) {
+        account.balance -= amount;
+    } else {
+        throw new Error('Invalid amount to withdraw');
+    }
+}
+
+function transfer(source, target, amount) {
+    if (!isAccount(source) || !isAccount(target)) {
+        return false;
+    } else if (!isAmount(amount)) {
+        return false;
+    } else if ( source.balance < amount) {
+        return false;
+    }
+
+    target.balance += amount;
+    source.balance -= amount;
+    return true;
+}
+
 function isAccount (maybeAccount) {
     if (!maybeAccount) {
         return false;
@@ -35,22 +61,6 @@ function isAmount (maybeAmount) {
     }
 
     return true;
-}
-
-function withdraw(account, amount) {
-    if (!isAccount(account)) {
-        throw new Error('Invalid account data');
-    } else if (!isAmount(amount)) {
-        throw new Error('Invalid amount');
-    } else if (account.balance >= amount) {
-        account.balance -= amount;
-    } else {
-        throw new Error('Invalid amount to withdraw');
-    }
-}
-
-function transfer(source, target, amount) {
-
 }
 
 module.exports = { deposit, withdraw, transfer }
